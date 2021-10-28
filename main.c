@@ -8,11 +8,11 @@ int main(int argc, char* argv[]){
 	int tablero[8][8];
 	//las casillas del tablero son predeterminadas, se les asignara un char que representara su efecto con un switch
 	tablero[0][1] = tablero[0][2] = tablero[0][5] = tablero[7][5] = tablero[7][3] = 0; //+50
-	tablero[0][3] = tablero[0][6] = tablero[1][7] = tablero[2][0] = 1; //-25
-	tablero[7][1] = tablero[7][4] = tablero[7][5] = tablero[6][0] = tablero[4][0] = 2; //+75
-	tablero[7][2] = tablero[7][3] = tablero[2][7] = 3; //-50
+	tablero[0][3] = tablero[0][6] = tablero[7][1] = tablero[2][0] = 1; //-25
+	tablero[1][7] = tablero[4][7] = tablero[5][7] = tablero[6][0] = tablero[4][0] = 2; //+75
+	tablero[2][7] = tablero[3][7] = tablero[7][2] = 3; //-50
 	tablero[0][7] = tablero[7][0] = 4; //jail
-	tablero[1][0] = 5; //+75
+	tablero[1][0] = 5; //-75
 	tablero[7][7] = 6; //free space
 	tablero[0][4] = 7; //back 2
 	tablero[6][7] = 8; //back 3
@@ -21,8 +21,9 @@ int main(int argc, char* argv[]){
 	tablero[5][0] = 11; //forward 5
 	tablero[0][0] = 12; //START
 	
-	for(int x=0; x<8; x++){
-		for(int y=0; y<8; y++){
+	for(int y=7; y>=0; y--){
+		printf("------------------------------------------------------------------------------------------------\n");
+		for(int x=0; x<8; x++){
 			
 			switch(tablero[x][y]){
 				case 0:
@@ -41,7 +42,7 @@ int main(int argc, char* argv[]){
 					printf("|    Jail   ");
 					break;
 				case 5:
-					printf("|    +75    ");
+					printf("|    -75    ");
 					break;
 				case 6:
 					printf("|    Free   ");
@@ -72,6 +73,7 @@ int main(int argc, char* argv[]){
 			}
 		}
 	}
+	printf("------------------------------------------------------------------------------------------------\n");
 	
 	return(0);
 }
