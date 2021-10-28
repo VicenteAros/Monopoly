@@ -1,5 +1,16 @@
 #include "jueguito.h"
 
+/****
+* void mostrarTablero
+* ****
+* muestra por pantalla el tablero
+* ****
+* input:
+* int* tablero: dirección base del tablero
+* ****
+* return:
+*
+****/
 void mostrarTablero(int* tablero){
   for(int y=7; y>=0; y--){
 		printf("--------------------------------------------------------------------------------------------------------\n");
