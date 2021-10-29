@@ -3,3 +3,4 @@
 #include <unistd.h>
 
 void mostrarTablero(int *tablero);
+int rollD6(int pip);
