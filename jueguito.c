@@ -66,3 +66,8 @@ void mostrarTablero(int* tablero){
 	}
 	printf("--------------------------------------------------------------------------------------------------------\n");
 }
+
+int rollD6(int randomNumber){
+	int dado = randomNumber%5 + 1;
+	return(dado);
+}
