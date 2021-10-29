@@ -24,5 +24,18 @@ int main(int argc, char* argv[]){
 	
 	mostrarTablero(tablero);
 	
+	pid_t pid;
+	int fd[2];
+	pipe(fd);
+	
+	pid = fork();
+	if(pid==0){
+		 pid = fork();
+	}
+	
+	int dinero = 100;
+	
+	
+	
 	return(0);
 }
