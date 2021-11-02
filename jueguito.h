@@ -10,4 +10,4 @@ typedef struct {
 void mostrarTablero(int *tablero);
 void aplicarCasilla(int *tablero, jugador player);
 void moverJugador(jugador player, int espacios);
-int rollD6(int randomNumber);
+void rollD6(int randomNumber);
