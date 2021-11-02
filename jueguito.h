@@ -8,6 +8,6 @@ typedef struct {
 }jugador;
 
 void mostrarTablero(int *tablero);
-int rollD6(int randomNumber);
-void moverJugador(jugador player, int espacios);
 void aplicarCasilla(int *tablero, jugador player);
+void moverJugador(jugador player, int espacios);
+int rollD6(int randomNumber);
