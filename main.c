@@ -25,17 +25,18 @@ int main(int argc, char* argv[]){
 	mostrarTablero(tablero);
 	
 	pid_t pid;
-	int fd[2];
-	pipe(fd);
+	int fd12[2], fd21[2], fd23[2], fd32[2], fd31[2], fd13[2]; //pipes
 	
 	pid = fork();
 	if(pid==0){
 		 pid = fork();
 	}
+
+	jugador player = { 100, {0}, pid, 0};
 	
-	int dinero = 100;
-	
-	
+	while(player.dinero <500){
+		wait(NULL);
+	}
 	
 	return(0);
 }
