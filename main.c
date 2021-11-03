@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <sys/wait.h>
 #include "jueguito.h"
 
 int main(int argc, char* argv[]){
@@ -36,6 +37,23 @@ int main(int argc, char* argv[]){
 	
 	while(player.dinero <500){
 		wait(NULL);
+		if(player.ID == 0){
+			int entrada;
+			printf("Turno del Jugador %d\n", player.ID);
+			printf("Dinero: %d", player.dinero);
+			printf("Seleccione una acción\n");
+			printf("\t1. Tirar dado\n");
+			printf("\t2. Salir del juego\n");
+			scanf("%d", &entrada);
+			if(entrada == 1){
+				int roll;
+				roll = rollD6(srandom(getpid()));
+				printf("Jugador %d rollea un $d\n", player.ID, roll);
+				moverJugador(tablero, &player, roll);
+				mostrarTablero(tablero);
+			}
+
+		}
 	}
 	
 	return(0);
